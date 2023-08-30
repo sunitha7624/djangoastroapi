@@ -1,4 +1,4 @@
-from Core_Api.Serializers import BioSerializer,TimeZoneWorldSerializer,UsTimeZoneSerializer,RussiaTimeZoneSerializer,CanadaTimeZoneSerializer,DstUsSerializer,DstRussiaSerializer,DstCanadaSerializer
+from Core_Api.Serializers import BioSerializer,TimeZoneWorldSerializer,UsTimeZoneSerializer,RussiaTimeZoneSerializer,CanadaTimeZoneSerializer,DstUsSerializer,DstRussiaSerializer,DstCanadaSerializer,D2UsSerializer
 
 from django.db.models.query import QuerySet
 from rest_framework.response import Response
@@ -49,6 +49,11 @@ class DstCanadaViewSet(viewsets.ModelViewSet):
     queryset = Dst_Canada_Correction_Timing_Table.objects.all()
     serializer_class = DstCanadaSerializer
     permission_classes = (AllowAny,)  
+    
+class D2UsViewSet(viewsets.ModelViewSet):
+    queryset = UMA_SHAMBHU_Hora_D2_US_Table.objects.all()
+    serializer_class = D2UsSerializer
+    permission_classes = (AllowAny,)      
     
 # class MyViewSet(viewsets.ModelViewSet):
 #     def get_queryset(self):

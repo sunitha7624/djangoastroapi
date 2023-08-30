@@ -467,11 +467,7 @@ class UMA_SHAMBHU_Hora_D2_US_Table(models.Model):
     body_placed = models.CharField(default= '', max_length=30, db_column='NUMERIC VALUE WHRE BODY IS PLACED', verbose_name='NUMERIC VALUE WHRE BODY IS PLACED', blank=True)
     hora_lord = models.CharField(default='', max_length=20, db_column='HORA LORD', verbose_name='HORA LORD', blank=True)
     DEVTA = models.CharField(default='', max_length=30, blank=True)
-    from_extent1 = models.CharField(default = '', max_length = 30, db_column='From (SS-DD-MM-SS)-1', verbose_name='From (SS-DD-MM-SS)', blank=True)
-    to_extent1 = models.CharField(default = '',max_length = 30, db_column='To (SS-DD-MM-SS)-1', verbose_name='To (SS-DD-MM-SS)', blank=True)
-    body_placed1 = models.CharField(default= '', max_length=30, db_column='NUMERIC VALUE WHRE BODY IS PLACED-1', verbose_name='NUMERIC VALUE WHRE BODY IS PLACED', blank=True)
-    hora_lord1 = models.CharField(default='', max_length=20, db_column='HORA LORD-1', verbose_name='HORA LORD', blank=True)
-    DEVTA1 = models.CharField(default='', max_length=30, db_column='DEVTA-1', verbose_name='DEVTA', blank=True)
+   
 
     class Meta:
         verbose_name = '32.5. Table Name: Uma-Shambhu Hora D-2(US) Table Code: 32-E'

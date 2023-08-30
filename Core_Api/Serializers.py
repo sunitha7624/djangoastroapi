@@ -40,7 +40,13 @@ class DstRussiaSerializer(serializers.ModelSerializer):
 class DstCanadaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dst_Canada_Correction_Timing_Table
-        fields = '__all__'                                             
+        fields = '__all__'    
+        
+        
+class D2UsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UMA_SHAMBHU_Hora_D2_US_Table
+        fields = '__all__'                                                     
 
 
 
