@@ -4,6 +4,7 @@ from rest_framework import routers
 from rest_framework_simplejwt import views as jwt_views
 # from . import views as aboutview
 from django.conf.urls import include 
+from .views import CombinedDataView
 
 
 
@@ -17,7 +18,10 @@ router.register('canadatimezone', CanadaTimeZoneViewSet)
 router.register('dstcorrectionus', DstUsViewSet)
 router.register('dstcorrectionrussia', DstRussiaViewSet)
 router.register('dstcorrectioncanada', DstCanadaViewSet)
-router.register('umashambhuhorad2us', D2UsViewSet)
+router.register('natalfirsttime', NatalFirstTimeViewSet),
+router.register('userregistration', UserRegistrationViewSet)
+router.register('usersetting', UserSettingViewSet)
+
 
 
 
@@ -30,7 +34,7 @@ urlpatterns = [
 #          jwt_views.TokenRefreshView.as_view(),
 #          name ='token_refresh'),
     path('', include(router.urls)),
-    
+    path('combined-data/', CombinedDataView.as_view(), name='combined-data'),
     
     ]
 
