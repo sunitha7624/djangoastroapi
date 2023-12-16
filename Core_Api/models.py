@@ -2174,7 +2174,16 @@ class  User_Setting_Table(models.Model):
     class Meta:
         verbose_name = '100. Table Name: User_Setting_Table (Table Code:101)'
         verbose_name_plural = '100. Table Name:  User_Setting_Table (Table Code:101)'                   
-        
-        
+       
+class Ashtottari_Dasa_Table(models.Model):
+    Nakshatra_name = models.CharField(max_length=100, db_column='Nakshatra Name', blank=True)
+    from_extent = models.CharField(default='', max_length=30, db_column='from_extent',  blank=True)
+    to_extent = models.CharField(default='', max_length=30, db_column='to_extent', blank=True)
+    ending_point = models.CharField(max_length=30,verbose_name='ENDING POINT DASA', blank=True)
+    lord_dasa = models.CharField(max_length=30,verbose_name='LORD OF DASA', blank=True)
+    period_dasa = models.CharField(max_length=30, db_column='PERIOD OF DASA (YY-MM-DD)', verbose_name='PERIOD OF DASA (YY-MM-DD)', blank=True)
+    class Meta:
+        verbose_name = '101. Ashtottari  Deity (Devta) for REMEDIES Table'
+        verbose_name_plural = '101. Ashtottari  Deity (Devta) for REMEDIES Table'        
         
                 

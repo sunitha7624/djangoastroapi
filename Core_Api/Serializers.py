@@ -311,5 +311,10 @@ class NakshatraLordDasaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Nakshatra_Lord_For_Dasa_Table
         fields = '__all__' 
+        
+class AshtottariDasaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ashtottari_Dasa_Table
+        fields = '__all__'         
 
 

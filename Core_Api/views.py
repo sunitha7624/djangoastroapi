@@ -1,4 +1,4 @@
-from Core_Api.Serializers import BioSerializer,TimeZoneWorldSerializer,UsTimeZoneSerializer,RussiaTimeZoneSerializer,CanadaTimeZoneSerializer,DstUsSerializer,DstRussiaSerializer,DstCanadaSerializer,D2UsSerializer,D3PrashariDrekkanaSerializer,D45AkshavedamsaSerializer,D7SaptamshaSerializer,D2ParashariHoraSerializer,D2JagannathHoraSerializer,D2KashiNathHoraSerializer,D2SamaSaptakHoraSerializer,D2MandukaHoraSerializer,D2LabhMandookHoraSerializer,D2SomNathHoraSerializer,D2ParivriittiDwayaHoraSerializer,D3ParivitritTrayaDrekkanaSerializer,D3JagannathDrekkanaSerializer,D3SomnathmDrekkanaSerializer,D4ParashariChaturthamsaSerializer,D4VedaamsaSerializer,D5ParivrittiPanchamshaSerializer,D5TajikPanchamshaSerializer,D6KaulukaShastamsaSerializer,D6ParivrittiSHashtamsaSerializer ,D8TajikAshtamamshaSerializer,D9ParashariNavamshaSerializer,D9SomnathNavamshaSerializer,D9PadaNavamshaSerializer,D9NadiNavamshaSerializer,D10DashamanshaSerializer,D11ParashariRudramsaSerializer,D11IyerLabhamsaSerializer,D12DvadashamsaSerializer,D16ParashriSodashamsaSerializer,D16IyerSodashamsaSerializer,D20VimsamshaSerializer,D24ParasharSiddhaamshaSerializer,D24ParaVidhyaSiddhamshaSerializer,D27BhamshaSerializer,D30ParashariTattvamsaSerializer,D30VenketshwarTrimshamsaSerializer,D40KhadvedamsaSerializer,D60SastiamsaSerializer,D81NavaNavamshaSerializer,D108AshtottaramsaSerializer,D144DwadasamsaSerializer,ArudhaLagnaDeterminationSerializer,RasiNamesAndSymbolsSerializer,D1RashiSerializer,NakshatraExtent27Serializer,KaranaSerializer,NatalFirstTimeSerializer,UserRegistrationSerializer,UserSettingSerializer,NakshatraLordDasaSerializer
+from Core_Api.Serializers import BioSerializer,TimeZoneWorldSerializer,UsTimeZoneSerializer,RussiaTimeZoneSerializer,CanadaTimeZoneSerializer,DstUsSerializer,DstRussiaSerializer,DstCanadaSerializer,D2UsSerializer,D3PrashariDrekkanaSerializer,D45AkshavedamsaSerializer,D7SaptamshaSerializer,D2ParashariHoraSerializer,D2JagannathHoraSerializer,D2KashiNathHoraSerializer,D2SamaSaptakHoraSerializer,D2MandukaHoraSerializer,D2LabhMandookHoraSerializer,D2SomNathHoraSerializer,D2ParivriittiDwayaHoraSerializer,D3ParivitritTrayaDrekkanaSerializer,D3JagannathDrekkanaSerializer,D3SomnathmDrekkanaSerializer,D4ParashariChaturthamsaSerializer,D4VedaamsaSerializer,D5ParivrittiPanchamshaSerializer,D5TajikPanchamshaSerializer,D6KaulukaShastamsaSerializer,D6ParivrittiSHashtamsaSerializer ,D8TajikAshtamamshaSerializer,D9ParashariNavamshaSerializer,D9SomnathNavamshaSerializer,D9PadaNavamshaSerializer,D9NadiNavamshaSerializer,D10DashamanshaSerializer,D11ParashariRudramsaSerializer,D11IyerLabhamsaSerializer,D12DvadashamsaSerializer,D16ParashriSodashamsaSerializer,D16IyerSodashamsaSerializer,D20VimsamshaSerializer,D24ParasharSiddhaamshaSerializer,D24ParaVidhyaSiddhamshaSerializer,D27BhamshaSerializer,D30ParashariTattvamsaSerializer,D30VenketshwarTrimshamsaSerializer,D40KhadvedamsaSerializer,D60SastiamsaSerializer,D81NavaNavamshaSerializer,D108AshtottaramsaSerializer,D144DwadasamsaSerializer,ArudhaLagnaDeterminationSerializer,RasiNamesAndSymbolsSerializer,D1RashiSerializer,NakshatraExtent27Serializer,KaranaSerializer,NatalFirstTimeSerializer,UserRegistrationSerializer,UserSettingSerializer,NakshatraLordDasaSerializer,AshtottariDasaSerializer
 
 from django.db.models.query import QuerySet
 from rest_framework.response import Response
@@ -80,7 +80,6 @@ class CombinedDataView(APIView):
         labhmandookhora_data = LABH_MANDOOK_Hora_Table.objects.all()
         somnathhora_data = SOM_NATH_Hora_D2_SN_Table.objects.all()
         parivriittidwayahora_data = PARIVRIITTI_DWAYA_Hora_D2_PD_Table.objects.all()
-        parivriittidwayahora_data = PARIVRIITTI_DWAYA_Hora_D2_PD_Table.objects.all()
         prasharidrekkana_data = PRASHARI_DREKKANA_D3_PD_Table.objects.all()
         parivitriitrayadrekkana_data = PARIVITRII_TRAYA_DREKKANA_D3_PT_Table.objects.all()
         jagannathdrekkana_data = JAGANNATH_DREKKANA_D3_JD_Table.objects.all()
@@ -120,7 +119,7 @@ class CombinedDataView(APIView):
         nakshatra27degree_data = Nakshatra_Extent_27_in_terms_of_Degree_table.objects.all()
         karanadegree_data =  Karana_Table.objects.all()
         nakshatradasa_data =  Nakshatra_Lord_For_Dasa_Table.objects.all()
-
+        ashtottaridasa_data =  Ashtottari_Dasa_Table.objects.all()
 
         d1rashi_serializer = D1RashiSerializer(rashichartd1_data, many=True)
         umashambhuhora_serializer = D2UsSerializer(umashambhuhora_data, many=True)
@@ -170,6 +169,7 @@ class CombinedDataView(APIView):
         nakshatraextent27degree_serializer = NakshatraExtent27Serializer(nakshatra27degree_data, many=True)
         karanadegree_serializer = KaranaSerializer(karanadegree_data, many=True)
         nakshatralorddasa_serializer = NakshatraLordDasaSerializer(nakshatradasa_data, many=True)
+        ashtottarilorddasa_serializer = AshtottariDasaSerializer(ashtottaridasa_data, many=True)
 
         combined_data = {
             'Rashi_Chart_D1': d1rashi_serializer.data,
@@ -220,6 +220,7 @@ class CombinedDataView(APIView):
             'Nakshatra_Extent_27_Degree': nakshatraextent27degree_serializer.data,
             'Karana_From_To_Degree': karanadegree_serializer.data,
             'nakshatra_Lord_Dasa': nakshatralorddasa_serializer.data,
+            'Ashtittari_Lord_Dasa': ashtottarilorddasa_serializer.data,
         }
 
         return Response(combined_data, status=status.HTTP_200_OK)
