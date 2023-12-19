@@ -195,14 +195,15 @@ class Nakshatra_Pada_Table_under_27_nakshatra_scheme(models.Model):
 
 class Nakshatra_Lord_For_Dasa_Table(models.Model):
     s_no = models.IntegerField(default=0, verbose_name='SERIAL No.',blank=True)
-    class_dasa = models.CharField(max_length=30,verbose_name='CLASS OF DASA', blank=True)
-    type_dasa = models.CharField(max_length=30,verbose_name='TYPE OF DASA', blank=True)
+    ascendant_from_extent = models.CharField(max_length=30,verbose_name='ASCENDANT FROM EXTENT', blank=True)
+    ascendant_to_extent = models.CharField(max_length=30,verbose_name='ASCENDANT TO EXTENT', blank=True)
     lord_dasa = models.CharField(max_length=30,verbose_name='LORD OF DASA', blank=True)
     name_of_nakshatra = models.CharField(max_length=30, verbose_name='NAME OF NAKSHTRA', blank=True)
     from_extent = models.CharField(max_length = 30, db_column='Extent From (SS-DD-MM-SS)', verbose_name='Extent From (SS-DD-MM-SS)', blank=True)
     to_extent = models.CharField(max_length = 30, db_column='Extent To (SS-DD-MM-SS)', verbose_name='Extent To (SS-DD-MM-SS)', blank=True)
-    lord_nakshtra = models.CharField(max_length=30, db_column='LORD OF NAKSHTRA', verbose_name='LORD OF NAKSHTRA', blank=True)
+    type_paksha = models.CharField(max_length=30, db_column='TYPE OF PAKSHA', verbose_name='TYPE OF PAKSHA', blank=True)
     period_dasa = models.CharField(max_length=30, db_column='PERIOD OF DASA (YY-MM-DD)', verbose_name='PERIOD OF DASA (YY-MM-DD)', blank=True)
+    shodashottari_period_dasa = models.CharField(max_length=30, db_column='shodashottari PERIOD OF DASA ', verbose_name='shodashottari PERIOD OF DASA', blank=True)
 
     class Meta:
         verbose_name = ' 9. Nakshatra Lord(For Dasa) Table'
