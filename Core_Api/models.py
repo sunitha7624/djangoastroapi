@@ -197,17 +197,35 @@ class Nakshatra_Lord_For_Dasa_Table(models.Model):
     s_no = models.IntegerField(default=0, verbose_name='SERIAL No.',blank=True)
     ascendant_from_extent = models.CharField(max_length=30,verbose_name='ASCENDANT FROM EXTENT', blank=True)
     ascendant_to_extent = models.CharField(max_length=30,verbose_name='ASCENDANT TO EXTENT', blank=True)
+    shattrimsamsasama_from_extent = models.CharField(max_length=30,verbose_name='shattrimsamsasama FROM EXTENT', blank=True)
+    shattrimsamsasama_to_extent = models.CharField(max_length=30,verbose_name='shattrimsamsasama TO EXTENT', blank=True)
     lord_dasa = models.CharField(max_length=30,verbose_name='LORD OF DASA', blank=True)
     name_of_nakshatra = models.CharField(max_length=30, verbose_name='NAME OF NAKSHTRA', blank=True)
     from_extent = models.CharField(max_length = 30, db_column='Extent From (SS-DD-MM-SS)', verbose_name='Extent From (SS-DD-MM-SS)', blank=True)
     to_extent = models.CharField(max_length = 30, db_column='Extent To (SS-DD-MM-SS)', verbose_name='Extent To (SS-DD-MM-SS)', blank=True)
+    type_birthtime = models.CharField(max_length=30, db_column='TYPE OF birthtime', verbose_name='TYPE OF birthtime', blank=True)
     type_paksha = models.CharField(max_length=30, db_column='TYPE OF PAKSHA', verbose_name='TYPE OF PAKSHA', blank=True)
     period_dasa = models.CharField(max_length=30, db_column='PERIOD OF DASA (YY-MM-DD)', verbose_name='PERIOD OF DASA (YY-MM-DD)', blank=True)
     shodashottari_period_dasa = models.CharField(max_length=30, db_column='shodashottari PERIOD OF DASA ', verbose_name='shodashottari PERIOD OF DASA', blank=True)
+    shodashottari_planet = models.CharField(max_length=30, db_column='shodashottari PLANET', verbose_name='shodashottari PLANET', blank=True)
+    dwadasottari_period_dasa = models.CharField(max_length=30, db_column='dwadasottari PERIOD OF DASA ', verbose_name='dwadasottari PERIOD OF DASA', blank=True)
+    dwadasottari_planet = models.CharField(max_length=30, db_column='dwadasottari PLANET', verbose_name='dwadasottari PLANET', blank=True)
+    panchottari_period_dasa = models.CharField(max_length=30, db_column='panchottari PERIOD OF DASA ', verbose_name='panchottari PERIOD OF DASA', blank=True)
+    panchottari_planet = models.CharField(max_length=30, db_column='panchottari PLANET', verbose_name='panchottari PLANET', blank=True)
+    satabdika_period_dasa = models.CharField(max_length=30, db_column='satabdika PERIOD OF DASA ', verbose_name='satabdika PERIOD OF DASA', blank=True)
+    satabdika_planet = models.CharField(max_length=30, db_column='satabdika PLANET', verbose_name='satabdika PLANET', blank=True)
+    chatursitisama_period_dasa = models.CharField(max_length=30, db_column='chatursitisama PERIOD OF DASA ', verbose_name='chatursitisama PERIOD OF DASA', blank=True)
+    chatursitisama_planet = models.CharField(max_length=30, db_column='chatursitisama PLANET', verbose_name='chatursitisama PLANET', blank=True)
+    dwisaptatisama_period_dasa = models.CharField(max_length=30, db_column='dwisaptatisama PERIOD OF DASA ', verbose_name='dwisaptatisama PERIOD OF DASA', blank=True)
+    dwisaptatisama_planet = models.CharField(max_length=30, db_column='dwisaptatisama PLANET', verbose_name='dwisaptatisama PLANET', blank=True)
+    shattrimsamsasama_period_dasa = models.CharField(max_length=30, db_column='shattrimsamsasama PERIOD OF DASA ', verbose_name='shattrimsamsasama PERIOD OF DASA', blank=True)
+    shattrimsamsasama_planet = models.CharField(max_length=30, db_column='shattrimsamsasama PLANET', verbose_name='shattrimsamsasama PLANET', blank=True)
+    
 
     class Meta:
         verbose_name = ' 9. Nakshatra Lord(For Dasa) Table'
         verbose_name_plural = ' 9. Nakshatra Lord(For Dasa) Table'
+        
 
 class Nakshatra_Deity_Devta_for_REMEDIER(models.Model):
     nakshatra_no = models.IntegerField(default=0, blank=True)
@@ -2185,6 +2203,18 @@ class Ashtottari_Dasa_Table(models.Model):
     period_dasa = models.CharField(max_length=30, db_column='PERIOD OF DASA (YY-MM-DD)', verbose_name='PERIOD OF DASA (YY-MM-DD)', blank=True)
     class Meta:
         verbose_name = '101. Ashtottari  Deity (Devta) for REMEDIES Table'
-        verbose_name_plural = '101. Ashtottari  Deity (Devta) for REMEDIES Table'        
+        verbose_name_plural = '101. Ashtottari  Deity (Devta) for REMEDIES Table'
+        
+class Shatyhayani_Dasa_Table(models.Model):
+    s_no = models.IntegerField(default=0, verbose_name='SERIAL No.',blank=True)
+    from_extent = models.CharField(max_length = 30, db_column='Extent From (SS-DD-MM-SS)', verbose_name='Extent From (SS-DD-MM-SS)', blank=True)
+    to_extent = models.CharField(max_length = 30, db_column='Extent To (SS-DD-MM-SS)', verbose_name='Extent To (SS-DD-MM-SS)', blank=True)
+    Nakshatra_name = models.CharField(max_length=100, db_column='Nakshatra Name', blank=True)
+    shatyhayani_period_dasa = models.CharField(max_length=30, db_column='shatyhayani PERIOD OF DASA ', verbose_name='shatyhayani PERIOD OF DASA', blank=True)
+    shatyhayani_planet = models.CharField(max_length=30, db_column='shatyhayani PLANET', verbose_name='shatyhayani PLANET', blank=True)
+    
+    class Meta:
+        verbose_name = '101. Shatyhayani  Deity (Devta) for REMEDIES Table'
+        verbose_name_plural = '101. Shatyhayani  Deity (Devta) for REMEDIES Table'  
         
                 
